@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sweet Life - Ice Cream Shop</title>
+        <meta content="width-device-width, initial-scale=1.0" name="viewport">
+        <link href="images/favicon.ico" rel="icon">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Login and registration section -->
+        <div class="container-fluid background-primary padding-y-3 display-medium-block">
+            <div class="container">
+                <div class="row">
+                    <div class="column-medium-6 text-center text-large-left margin-bottom-2 margin-bottom-large-0">
+                        <div class="display-inline-flex align-items-center">
+                            <a class="text-white padding-right-3" href="login.html">Login</a>
+                            <span class="text-white">|</span>
+                            <a class="text-white padding-x-3" href="registration.html">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar section -->
+        <div class="container-fluid position-relative nav-bar padding-0">
+            <div class="container-large position-relative padding-0 padding-x-large-3" style="z-index: 9;">
+                <nav class="navbar navbar-expand-large background-white navbar-light shadow padding-large-0" id="navbar">
+                    <button type="button" class="navbar-toggler" id="toggleNavbarButton"  data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon">
+                            <span class="display-none">Toggle button</span>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav margin-left-auto padding-y-0">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <a href="product.html" class="nav-item nav-link">Product</a>
+                        </div>
+                        <a href="index.html" class="navbar-brand margin-x-5 display-none display-large-block">
+                            <img src="images/download.png" alt="Sweet Life logo" height="100">
+                        </a>
+                        <div class="navbar-nav margin-right-auto padding-y-0">
+                            <a href="order.html" class="nav-item nav-link">Order</a>
+                            <a href="features.html" class="nav-item nav-link active">Features</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container-fluid py-5" id="features">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <h1 class="section-title position-relative text-center mb-5">Features</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 py-5">
+                        <h4 class="font-weight-bold mb-3">Navbar</h4>
+                        <ul>
+                            <li><strong>Hover and highlight:</strong> When user hovers over the text (hyperlink to another page), it will automatically change colour, and when user clicks on it, it permanently highlights the hyperlink of the page until switching to another page.<br>Feature link: <a href="#navbar">Navbar</a></li>
+                            <li><strong>Navbar toggle button:</strong> It only appears on mobile devices, initially the navbar pages are hidden, if the button is pressed on, the navbar pages will display in the column.<br>Feature link: <a href="#toggleNavbarButton">Toggle navbar button</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 py-5">
+                        <h4 class="font-weight-bold mb-3">Product</h4>
+                        <ul>
+                            <li><strong>Hover:</strong> On PC, when a user hovers over one of the product containers, it will change background color.<br>Feature link: <a href="product.html#productDisplay">Product hover</a></li>
+                            <li><strong>"Order Now" button:</strong> When a user clicks on the "Order Now" button, it will redirect to the Order page with the product option selected.<br>Feature link: <a href="product.html#orderNowButton">"Order Now" button</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 py-5">
+                        <h4 class="font-weight-bold mb-3">Order</h4>
+                        <ul>
+                            <li><strong>Same as delivery address:</strong> When a user clicks on the checkbox with the address available in the input, it will automatically fill in the billing address input. If the address in the input is empty, it will show a warning.<br>Feature link: <a href="order.html#sameDelivery">Same as delivery address checkbox</a></li>
+                            <li><strong>Character limit depending on card distributors:</strong> When a user wants to use Visa and MasterCard for checkout, the card number will be limited to 16 digits, but when it comes to American Express, it will be 15 instead.<br>Feature link: <a href="order.html#cardNumber">Card number</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact section -->
+        <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;" id="contact">
+			<div class="container text-center py-5">
+				<div class="row">
+					<div class="col-12 mb-4">
+						<a href="index.html" class="navbar-brand m-0">
+							<img src="images/download.png" height="150" alt="Sweet Life logo">
+						</a>
+					</div>
+					<div class="col-12 mt-2 mb-4">
+						<div class="row">
+							<div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
+								<h5 class="font-weight-bold mb-2">Main Location</h5>
+								<p class="mb-2">670 Glenferrie Road, Hawthorn, VIC 3122</p>
+								<p class="mb-0">+61 468 437 247</p>
+							</div>
+							<div class="col-sm-6 text-center text-sm-left">
+								<h5 class="font-weight-bold mb-2">Opening Hours</h5>
+								<p class="mb-2">Mon – Sat, 6AM – 6PM</p>
+								<p class="mb-0">Sunday: Closed</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<p class="m-0">&copy; <a href="#">Sweet Life</a>. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- JavaScript implemented -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

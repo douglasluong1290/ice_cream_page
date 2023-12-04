@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Sweet Life - Ice Cream Shop</title>
+		<meta content="width-device-width, initial-scale=1.0" name="viewport">
+		<link href="images/favicon.ico" rel="icon">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+        <!-- Login and Registration section -->
+		<div class="container-fluid background-primary padding-y-3 display-medium-block">
+			<div class="container">
+				<div class="row">
+					<div class="column-medium-6 text-center text-large-left margin-bottom-2 margin-bottom-large-0">
+						<div class="display-inline-flex align-items-center">
+							<a class="text-white padding-right-3" href="login.html">Login</a>
+							<span class="text-white">|</span>
+							<a class="text-white padding-x-3" href="registration.html">Register</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- Navbar section -->
+		<div class="container-fluid position-relative nav-bar padding-0">
+            <div class="container-large position-relative padding-0 padding-x-large-3" style="z-index: 9;">
+                <nav class="navbar navbar-expand-large background-white navbar-light shadow padding-large-0">
+                    <button type="button" class="navbar-toggler" id="toggleNavbarButton" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon">
+                            <span class="display-none">Toggle button</span>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav margin-left-auto padding-y-0">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <a href="product.html" class="nav-item nav-link">Product</a>
+                        </div>
+                        <a href="index.html" class="navbar-brand margin-x-5 display-none display-large-block">
+                            <img src="images/download.png" height="100" alt="Sweet Life logo">
+                        </a>
+                        <div class="navbar-nav margin-right-auto padding-y-0">
+                            <a href="order.html" class="nav-item nav-link active">Order</a>
+                            <a href="features.html" class="nav-item nav-link">Features</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Order form section -->
+		<div class="container-fluid py-5">
+			<div class="container py-5">
+				<div class="row justify-content-center">
+					<div class="col-lg-6">
+						<h1 class="section-title position-relative text-center mb-5">Order</h1>
+					</div>
+				</div>
+				<div class="row justify-content-center">
+					<div class="col-lg-7">
+						<div class="contact-form bg-light rounded p-5">
+							<div id="success"></div>
+							<form name="sentMessage" id="contactForm" method="post" novalidate="novalidate" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
+								<div class="control-group">
+									<p>Choose your type of ice cream:</p>
+									<div class="form-check">
+										<input type="radio" name="selectIcecream" id="Vanilla" value="vanilla" style="margin-left: -15px;">
+										<label for="Vanilla"> Vanilla Ice Cream </label>
+									</div>
+									<div class="form-check">
+										<input type="radio" name="selectIcecream" id="Strawberry" value="strawberry" style="margin-left: -15px;">
+										<label for="Strawberry"> Strawberry Ice Cream </label>
+									</div>
+									<div class="form-check">
+										<input type="radio" name="selectIcecream" id="Chocolate" value="chocolate" style="margin-left: -15px;">
+										<label for="Chocolate"> Chocolate Ice Cream</label>
+									</div>
+                                    <p class="help-block text-danger display-none" id="noIceCream" style="color: red;">Please select a type of ice cream.</p>
+									<p class="help-block text-danger"></p>
+								</div>
+								<div class="control-group">
+									<p>Pickup or delivery?</p>
+									<div class="form-check">
+										<input type="radio" name="method" id="pickup" value="pickup" style="margin-left: -15px;">
+										<label for="pickup"> Pickup </label>
+									</div>
+									<div class="form-check">
+										<input type="radio" name="method" id="delivery" value="delivery" style="margin-left: -15px;">
+										<label for="delivery"> Delivery </label>
+									</div>
+                                    <p class="help-block text-danger display-none" id="noPickUpOrDelivery" style="color: red;">Please select one of those options.</p>
+									<p class="help-block text-danger"></p>
+								</div>
+								<div class="display-none" id="deliveryOption">
+                                    <div class="control-group">
+                                        <p>Enter your delivery address:</p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" name="address" class="form-control p-4" id="address" placeholder="Address">
+                                        <label for="address" class="display-none">Address</label>
+                                        <p class="help-block text-danger display-none" id="emptyAddress" style="color: red;">Please fill in your delivery address.</p>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-sm-6 control-group">
+                                            <input type="text" name="postcode" class="form-control p-4" id="postcode" placeholder="Postcode">
+                                            <label for="postcode" class="display-none">Postcode</label>
+                                            <p class="help-block text-danger display-none" id="fourDigitPostcode" style="color: red;">Delivery postcode must be 4-digit long.</p>
+                                            <p class="help-block text-danger display-none" id="noNumberPostcode" style="color: red;">Delivery postcode must not contain number.</p>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="col-sm-6 control-group">
+                                            <select class="form-select" name="state" id="state" aria-label="Select a state" style="padding: 1.25rem;">
+                                                <option value="" selected>Select a state</option>
+                                                <option value="NSW">New South Wales</option>
+                                                <option value="NT">Northern Territory</option>
+                                                <option value="QLD">Queensland</option>
+                                                <option value="SA">South Australia</option>
+                                                <option value="Tas">Tasmania</option>
+                                                <option value="VIC">Victoria</option>
+                                                <option value="WA">Western Australia</option>
+                                            </select>
+                                            <p class="help-block text-danger display-none" id="emptyState" style="color: red;">Please select a delivery state.</p>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <p class="help-block text-danger display-none" id="emptyFields" style="color: red;">One of those fields cannot be left empty.</p>
+                                    </div>
+                                    <div class="control-group">
+                                        <p>Enter your billing address:</p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="checkbox" name="sameDelivery" id="sameDelivery" value="sameDelivery">
+                                        <label for="sameDelivery"> Same as delivery address.</label>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div id="sameDeliveryToggle" style="display: block;">
+                                        <div class="control-group">
+                                            <input type="text" name="billingAddress" class="form-control p-4" id="billingAddress" placeholder="Address">
+                                            <label for="billingAddress" class="display-none">Billing address</label>
+                                            <p class="help-block text-danger display-none" id="emptyBillingAddress" style="color: red;">Please fill in your billing address.</p>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-sm-6 control-group">
+                                                <input type="text" name="billingPostcode" class="form-control p-4" id="billingPostcode" placeholder="Postcode">
+                                                <label for="billingPostcode" class="display-none">Billing postcode</label>
+                                                <p class="help-block text-danger display-none" id="fourDigitBillingPostcode" style="color: red;">Billing postcode must be 4-digit long.</p>
+                                                <p class="help-block text-danger display-none" id="noNumberBillingPostcode" style="color: red;">Billing postcode must not contain number.</p>
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                            <div class="col-sm-6 control-group">
+                                                <select class="form-select" name="billingState" id="billingState" aria-label="Select a state" style="padding: 1.25rem;">
+                                                    <option value="" selected>Select a state</option>
+                                                    <option value="NSW">New South Wales</option>
+                                                    <option value="NT">Northern Territory</option>
+                                                    <option value="QLD">Queensland</option>
+                                                    <option value="SA">South Australia</option>
+                                                    <option value="Tas">Tasmania</option>
+                                                    <option value="VIC">Victoria</option>
+                                                    <option value="WA">Western Australia</option>
+                                                </select>
+                                                <p class="help-block text-danger display-none" id="emptyBillingState" style="color: red;">Please select a billing state.</p>
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="control-group">
+									<p>Select your payment method:</p>
+									<div class="form-check">
+										<input type="radio" name="paymentMethod" id="payOnPickup" value="payOnPickup" style="margin-left: -15px;">
+										<label for="payOnPickup"> Pay on pickup </label>
+									</div>
+									<div class="form-check">
+										<input type="radio" name="paymentMethod" id="payOnline" value="payOnline" style="margin-left: -15px;">
+										<label for="payOnline"> Pay online </label>
+									</div>
+                                    <p class="help-block text-danger display-none" id="emptyPay" style="color: red;">Please select a payment method.</p>
+									<p class="help-block text-danger"></p>
+								</div>
+								<div class="display-none" id="onlineOption">
+                                    <div class="control-group">
+                                        <p>Select your card distributor:</p>
+                                        <div class="row">
+                                            <div class="form-check">
+                                                <input type="radio" name="cardDistributor" id="Visa" value="Visa" style="margin-left: -15px;">
+                                                <label for="Visa">
+                                                    <img src="images/visa.png" height="50" alt="Visa">
+                                                    <!-- Icon source: https://www.flaticon.com/free-icon/visa_349221?term=visa&page=1&position=1&origin=tag&related_id=349221-->
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="radio" name="cardDistributor" id="MasterCard" value="MasterCard" style="margin-left: -15px;">
+                                                <label for="MasterCard">
+                                                    <img src="images/mastercard.png" height="50" alt="MasterCard">
+                                                    <!-- Icon source: https://www.flaticon.com/free-icon/card_11107226?term=mastercard&page=1&position=2&origin=search&related_id=11107226 -->
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="radio" name="cardDistributor" id="AmericanExpress" value="AmericanExpress" style="margin-left: -15px;">
+                                                <label for="AmericanExpress">
+                                                    <img src="images/american-express.png" height="50" alt="AmericanExpress">
+                                                    <!-- Icon source: https://www.flaticon.com/free-icon/american-express_349228?related_id=349228&origin=pack -->
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <p class="help-block text-danger display-none" id="emptyCard" style="color: red;">Please select one of the card distributors above.</p>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div id="bankCard">
+                                        <div class="control-group">
+                                            <input type="text" name="cardNumber" class="form-control p-4" id="cardNumber" placeholder="Card number" >
+                                            <label for="cardNumber" class="display-none">Card number</label>
+                                            <p class="help-block text-danger display-none" id="sixteenDigitCardNumber" style="color: red;">Card number must be 16-digit long.</p>
+                                            <p class="help-block text-danger display-none" id="fifteenDigitCardNumber" style="color: red;">Card number must be 15-digit long.</p>
+                                            <p class="help-block text-danger display-none" id="cardNumberOnly" style="color: red;">Card number only contains number.</p>
+                                            <p class="help-block text-danger"></p>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-sm-6 control-group">
+                                                <input type="text" name="csv" class="form-control p-4" id="CSV" placeholder="CSV" >
+                                                <label for="CSV" class="display-none">CSV</label>
+                                                <p class="help-block text-danger display-none" id="threeDigitCSV" style="color: red;">CSV must be 3-digit long.</p>
+                                                <p class="help-block text-danger display-none" id="CSVNumberOnly" style="color: red;">CSV only contains number.</p>
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                            <div class="col-sm-6 control-group">
+                                                <input type="text" name="expiryDate" class="form-control p-4" id="expire" placeholder="Expiry date" >
+                                                <label for="expire" class="display-none">Expiry date</label>
+                                                <p class="help-block text-danger display-none" id="emptyExpiryDate" style="color: red;">Please enter the expiry date.</p>
+                                                <p class="help-block text-danger"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="control-group">
+									<input type="checkbox" name="verify" id="verify" value="verify" >
+									<label for="verify"> I confirm that the information above is 100% correct.</label>
+                                    <p class="help-block text-danger display-none" id="notCorrect" style="color: red;">Please tick the checkbox above to confirm.</p>
+									<p class="help-block text-danger"></p>
+								</div>
+								<div>
+									<input class="button button-primary btn-block padding-y-3 padding-x-5" type="submit" id="sendMessageButton" style="background-color: #2673D6;" value="Order">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- Contact section -->
+		<div class="container-fluid footer bg-light py-5" style="margin-top: 90px;" id="contact">
+			<div class="container text-center py-5">
+				<div class="row">
+					<div class="col-12 mb-4">
+						<a href="index.html" class="navbar-brand m-0">
+							<img src="images/download.png" height="150" alt="Sweet Life logo">
+						</a>
+					</div>
+					<div class="col-12 mt-2 mb-4">
+						<div class="row">
+							<div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
+								<h5 class="font-weight-bold mb-2">Main Location</h5>
+								<p class="mb-2">670 Glenferrie Road, Hawthorn, VIC 3122</p>
+								<p class="mb-0">+61 468 437 247</p>
+							</div>
+							<div class="col-sm-6 text-center text-sm-left">
+								<h5 class="font-weight-bold mb-2">Opening Hours</h5>
+								<p class="mb-2">Mon – Sat, 6AM – 6PM</p>
+								<p class="mb-0">Sunday: Closed</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<p class="m-0">&copy; <a href="#">Sweet Life</a>. All Rights Reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+        <!-- Javascript section -->
+        <script src="js/main.js"></script>
+        <script type="module" src="js/OrderValidation.js"></script>
+        <script type="module" src="js/deliveryOption.js"></script>
+        <script type="module" src="js/payOption.js"></script>
+        <script src="js/cardOption.js"></script>
+	</body>
+</html>
+
+

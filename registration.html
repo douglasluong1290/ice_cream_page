@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Sweet Life - Ice Cream Shop</title>
+        <meta content="width-device-width, initial-scale=1.0" name="viewport">
+        <link href="images/favicon.ico" rel="icon">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Login and Registration section -->
+        <div class="container-fluid background-primary padding-y-3 display-medium-block">
+            <div class="container">
+                <div class="row">
+                    <div class="column-medium-6 text-center text-large-left margin-bottom-2 margin-bottom-large-0">
+                        <div class="display-inline-flex align-items-center">
+                            <a class="text-white padding-right-3" href="login.html">Login</a>
+                            <span class="text-white">|</span>
+                            <a class="text-white padding-x-3" href="registration.html">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar section -->
+        <div class="container-fluid position-relative nav-bar padding-0">
+            <div class="container-large position-relative padding-0 padding-x-large-3" style="z-index: 9;">
+                <nav class="navbar navbar-expand-large background-white navbar-light shadow padding-large-0">
+                    <button type="button" class="navbar-toggler" id="toggleNavbarButton" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon">
+                            <span class="display-none">Toggle button</span>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav margin-left-auto padding-y-0">
+                            <a href="index.html" class="nav-item nav-link">Home</a>
+                            <a href="product.html" class="nav-item nav-link">Product</a>
+                        </div>
+                        <a href="index.html" class="navbar-brand margin-x-5 display-none display-large-block">
+                            <img src="images/download.png" height="100" alt="Sweet Life logo">
+                        </a>
+                        <div class="navbar-nav margin-right-auto padding-y-0">
+                            <a href="order.html" class="nav-item nav-link">Order</a>
+                            <a href="features.html" class="nav-item nav-link">Features</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Registration section -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h1 class="section-title position-relative text-center mb-5">Register</h1>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="contact-form bg-light rounded p-5">
+                            <div id="success"></div>
+                            <form name="sentMessage" id="contactForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php" novalidate="novalidate">
+                                <div class="control-group">
+                                    <input type="text" name="firstName" class="form-control p-4" id="firstname" placeholder="First name">
+                                    <label for="firstname" class="display-none">First name</label>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="firstNameEmpty">Please enter your first name.</p>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="text" name="lastName" class="form-control p-4" id="lastname" placeholder="Last name">
+                                    <label for="lastname" class="display-none">Last name</label>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="lastNameEmpty">Please enter your last name.</p>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <p>Select your gender: </p>
+                                    <div class="form-check">
+                                        <input type="radio" name="selectGender" id="male"  value="male" style="margin-left: -15px;">
+                                        <label for="male"> Male</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" name="selectGender" id="female" value="female" style="margin-left: -15px;">
+                                        <label for="female"> Female</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" name="selectGender" id="unknown" style="margin-left: -15px;">
+                                        <label for="unknown"> Prefer not to say</label>
+                                    </div>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="genderEmpty">Please select a gender.</p>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="text" name="address" class="form-control p-4" id="address" placeholder="Address" >
+                                    <label for="address" class="display-none">Address</label>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="addressEmpty">Please enter an address.</p>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                               <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    <input type="text" name="postcode" class="form-control p-4" id="postcode" placeholder="Postcode" >
+                                    <label for="postcode" class="display-none">Postcode</label>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="postcodeFourDigit">Postcode must be 4-digit.</p>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="postcodeOnlyNumber">Postcode must only contain numbers.</p>
+                                    <p class="help-block text-danger"></p> 
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <select class="form-select" name="state" id="state" aria-label="Select a state" style="padding: 1.25rem;">
+                                        <option value="" selected>Select a state</option>
+                                        <option value="NSW">New South Wales</option>
+                                        <option value="NT">Northern Territory</option>
+                                        <option value="QLD">Queensland</option>
+                                        <option value="SA">South Australia</option>
+                                        <option value="Tas">Tasmania</option>
+                                        <option value="VIC">Victoria</option>
+                                        <option value="WA">Western Australia</option>
+                                    </select>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="stateEmpty">A state must be selected.</p>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                               </div>
+                                <div class="control-group">
+                                    <input type="email" name="email" class="form-control p-4" id="email" placeholder="Email" >
+                                    <label class="display-none" for="email">Email</label>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="emailEmpty">Please enter your email.</p>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="password" name="password" class="form-control p-4" id="password" placeholder="Password" >
+                                    <label class="display-none" for="password">Password</label>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="passwordNineDigit">Password must be at least 9-character long.</p>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="password" name="retypePassword" class="form-control p-4" id="password2" placeholder="Retype password" >
+                                    <label class="display-none" for="password2">Retype password</label>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="passwordConfirmFailed">Passwords do not match.</p>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="control-group">
+                                    <input type="checkbox" name="notarobot" id="notarobot" value="notarobot" >
+                                    <label for="notarobot"> I am not a robot. </label>
+                                    <p class="help-block text-danger display-none" style="color: red;" id="robotDetected">Please tick the checkbox to confirm.</p>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div>
+                                    <input class="button button-primary btn-block padding-y-3 padding-x-5" type="submit" id="sendMessageButton" style="background-color: #2673D6;" value="Register">
+                                </div>
+                                <p class="help-block text-danger"></p>
+                                <p>If you already have an account, please <a href="login.html">log in</a>.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact section -->
+        <div class="container-fluid footer bg-light py-5" style="margin-top: 90px;" id="contact">
+            <div class="container text-center py-5">
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <a href="index.html" class="navbar-brand m-0">
+                            <img src="images/download.png" height="150" alt="Sweet Life logo">
+                        </a>
+                    </div>
+                    <div class="col-12 mt-2 mb-4">
+                        <div class="row">
+                            <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
+                                <h5 class="font-weight-bold mb-2">Main Location</h5>
+                                <p class="mb-2">670 Glenferrie Road, Hawthorn, VIC 3122</p>
+                                <p class="mb-0">+61 468 437 247</p>
+                            </div>
+                            <div class="col-sm-6 text-center text-sm-left">
+                                <h5 class="font-weight-bold mb-2">Opening Hours</h5>
+                                <p class="mb-2">Mon – Sat, 6AM – 6PM</p>
+                                <p class="mb-0">Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p class="m-0">&copy; <a href="#">Sweet Life</a>. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Javascript section -->
+        <script src="js/main.js"></script>
+        <script type="module" src="js/RegistrationValidation.js"></script>
+    </body>
+</html>
